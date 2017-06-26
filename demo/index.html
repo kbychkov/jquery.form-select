@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery.form-select demo</title>
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,500" rel="stylesheet">
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            padding: 40px;
+            color: rgba(0, 0, 0, 0.87);
+            font-family: 'Exo 2', sans-serif;
+        }
+        .content {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-select {
+            height: 52px;
+            position: relative;
+            border: 2px solid #BDBDBD;
+            overflow: hidden;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+        .form-select::after {
+            display: block;
+            width: 14px;
+            height: 14px;
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+            content: '';
+            background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjg0LjkgMjg0LjkiIHdpZHRoPSIyODUiIGhlaWdodD0iMjg1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yODIuMSA3Ni41bC0xNC4zLTE0LjNjLTEuOS0xLjktNC4xLTIuOS02LjYtMi45IC0yLjUgMC00LjcgMS02LjYgMi45TDE0Mi41IDE3NC40IDMwLjMgNjIuMmMtMS45LTEuOS00LjEtMi45LTYuNi0yLjkgLTIuNSAwLTQuNyAxLTYuNiAyLjlMMi45IDc2LjVDMSA3OC40IDAgODAuNiAwIDgzLjFjMCAyLjUgMSA0LjcgMi45IDYuNmwxMzMgMTMzYzEuOSAxLjkgNC4xIDIuOSA2LjYgMi45czQuNy0xIDYuNi0yLjlMMjgyLjEgODkuNmMxLjktMS45IDIuOC00LjEgMi44LTYuNkMyODQuOSA4MC42IDI4NCA3OC40IDI4Mi4xIDc2LjVaIi8+PC9zdmc+') no-repeat center / contain;
+        }
+        .form-select__label {
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            padding: 0 16px;
+            color: rgba(0, 0, 0, 0.38);
+        }
+        .form-select__text {
+            display: block;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            padding: 0 16px;
+        }
+        .form-select__select {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            padding: 0 20px;
+            z-index: 1;
+            border: none;
+            background: transparent;
+            outline: none;
+            opacity: 0;
+        }
+        .form-select.active .form-select__label {
+            top: 8px;
+            color: #03A9F4;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .form-select.active .form-select__text {
+            top: 21px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="form-group">
+            <div class="form-select js-form-select">
+                <label class="form-select__label">City</label>
+                <span class="form-select__text"></span>
+                <select class="form-select__select">
+                    <option>Ekaterinburg</option>
+                    <option>Kazan</option>
+                    <option>Moscow</option>
+                    <option>Novosibirsk</option>
+                    <option>Norilsk</option>
+                    <option>Salehard</option>
+                    <option>Tula</option>
+                    <option>Tumen</option>
+                    <option>Vladivostok</option>
+                    <option>Voronezh</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="../src/jquery.form-select.js"></script>
+    <script>
+        $(function () {
+            $('.js-form-select').formSelect({
+                textClass: 'form-select__text'
+            });
+        });
+    </script>
+</body>
+</html>
