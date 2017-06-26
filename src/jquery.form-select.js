@@ -19,21 +19,19 @@
 
             $parent.append($('span').addClass(settings.textClass));
 
-            var $text = $parent.find(settings.textClass);
+            var $text = $parent.find('.'+settings.textClass);
 
             function activateControl($control) {
-                var value = $control.val();
-                var text = $control.find(':selected').text();
-                console.log(value, text);
+                var $selected = $control.find(':selected');
+                var text = $selected.text();
 
-                if (value == null || value == '') {
+                if ($selected.get(0).disabled) {
                     $parent.removeClass(settings.activeClass);
                 } else {
                     $parent.addClass(settings.activeClass);
+                    $text.text(text);
                 }
-
-                $text.text(text);
-            }
+                }
 
             activateControl($control);
 
@@ -43,7 +41,6 @@
 
             $control.on('blur', function () {
                 $parent.removeClass(settings.focusClass);
-                activateControl($control);
             });
 
             $control.on('change', function () {
