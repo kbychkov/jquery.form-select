@@ -1,5 +1,5 @@
 /**
- * jquery.form-select plugin v0.0.1
+ * jquery.form-select plugin v1.0.1
  * https://github.com/kbychkov/jquery.form-select
  */
 (function ($) {
@@ -17,7 +17,7 @@
             var $parent = $(this),
                 $control = $('select', $parent);
 
-            $parent.append($('span').addClass(settings.textClass));
+            $parent.append($('<span></span>').addClass(settings.textClass));
 
             var $text = $parent.find('.'+settings.textClass);
 
@@ -31,7 +31,7 @@
                     $parent.addClass(settings.activeClass);
                     $text.text(text);
                 }
-                }
+            }
 
             activateControl($control);
 
