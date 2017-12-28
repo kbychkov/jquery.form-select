@@ -42,6 +42,7 @@
 
             $control.on('blur', function () {
                 $parent.removeClass(settings.focusClass);
+                $parent.removeClass(settings.openClass);
             });
 
             $control.on('change', function () {
