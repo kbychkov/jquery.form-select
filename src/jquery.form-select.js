@@ -9,6 +9,7 @@
         var settings = $.extend({
             activeClass: 'active',
             focusClass: 'focus',
+            openClass: 'open',
             textClass: 'text'
         }, options);
 
@@ -45,6 +46,10 @@
 
             $control.on('change', function () {
                 activateControl($control);
+            });
+
+            $control.on('click', function () {
+                $parent.toggleClass(settings.openClass);
             });
         });
     }

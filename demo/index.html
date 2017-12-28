@@ -33,12 +33,11 @@
             width: 14px;
             height: 14px;
             position: absolute;
-            top: 50%;
+            top: calc(50% - 7px);
             right: 16px;
-            -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
             content: '';
             background: url('data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMjg0LjkgMjg0LjkiIHdpZHRoPSIyODUiIGhlaWdodD0iMjg1IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0yODIuMSA3Ni41bC0xNC4zLTE0LjNjLTEuOS0xLjktNC4xLTIuOS02LjYtMi45IC0yLjUgMC00LjcgMS02LjYgMi45TDE0Mi41IDE3NC40IDMwLjMgNjIuMmMtMS45LTEuOS00LjEtMi45LTYuNi0yLjkgLTIuNSAwLTQuNyAxLTYuNiAyLjlMMi45IDc2LjVDMSA3OC40IDAgODAuNiAwIDgzLjFjMCAyLjUgMSA0LjcgMi45IDYuNmwxMzMgMTMzYzEuOSAxLjkgNC4xIDIuOSA2LjYgMi45czQuNy0xIDYuNi0yLjlMMjgyLjEgODkuNmMxLjktMS45IDIuOC00LjEgMi44LTYuNkMyODQuOSA4MC42IDI4NCA3OC40IDI4Mi4xIDc2LjVaIi8+PC9zdmc+') no-repeat center / contain;
+            transition: transform .5s;
         }
         .form-select__label {
             display: block;
@@ -65,6 +64,10 @@
             background: transparent;
             outline: none;
             opacity: 0;
+        }
+        .form-select.open::after {
+            transform: rotateX(180deg);
+            transition: transform .5s;
         }
         .form-select.active .form-select__label {
             top: 8px;
